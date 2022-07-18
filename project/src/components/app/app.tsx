@@ -1,5 +1,5 @@
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import { AppRoute, AuthorizationStatus } from '../../const';
+import { AppRoute } from '../../const';
 import Main from '../main/main';
 import SignIn from '../sign-in/sign-in';
 import MyList from '../my-list/my-list';
@@ -7,11 +7,29 @@ import Film from '../film/film';
 import AddReview from '../add-review/add-review';
 import Player from '../player/player';
 import PageNotFound from '../page-not-found/page-not-found';
-import PrivateRoute from '../private-route/private-route';
+// import PrivateRoute from '../private-route/private-route';
 
-type AppProps = { title: string; genre: string; year: number };
+type AppProps = {
+  title: string;
+  genre: string;
+  year: number;
+  films: {
+    id: number;
+    title: string;
+    genre: string;
+    year: number;
+    rating: string;
+    score: number;
+    votes: number;
+    desc: string;
+    director: string;
+    actors: string;
+    img: string;
+    video: string;
+  }[];
+};
 
-function App({ title, genre, year }: AppProps): JSX.Element {
+function App({ title, genre, year, films }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -23,9 +41,9 @@ function App({ title, genre, year }: AppProps): JSX.Element {
         <Route
           path={AppRoute.MyList}
           element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <MyList />
-            </PrivateRoute>
+            // <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <MyList films={films} />
+            // </PrivateRoute>
           }
         />
         <Route path={AppRoute.Film} element={<Film />} />

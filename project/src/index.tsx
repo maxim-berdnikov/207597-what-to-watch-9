@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
+import { FILMS } from './mocks/films';
 
 const MainFilmInfo = {
   title: 'The Grand Budapest Hotel',
@@ -14,6 +15,7 @@ ReactDOM.render(
       title={MainFilmInfo.title}
       genre={MainFilmInfo.genre}
       year={MainFilmInfo.year}
+      films={FILMS}
     />
   </React.StrictMode>,
   document.getElementById('root'),

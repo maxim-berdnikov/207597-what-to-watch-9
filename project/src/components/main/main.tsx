@@ -1,4 +1,4 @@
-import FilmCard from '../film-card/film-card';
+// import FilmCard from '../film-card/film-card';
 import Logo from '../logo/logo';
 
 type MainFilmProps = { title: string; genre: string; year: number };
@@ -138,6 +138,7 @@ function Main({ title, genre, year }: MainFilmProps): JSX.Element {
           </ul>
 
           <div className="catalog__films-list">
+            {/* <FilmCard />
             <FilmCard />
             <FilmCard />
             <FilmCard />
@@ -156,8 +157,7 @@ function Main({ title, genre, year }: MainFilmProps): JSX.Element {
             <FilmCard />
             <FilmCard />
             <FilmCard />
-            <FilmCard />
-            <FilmCard />
+            <FilmCard /> */}
           </div>
 
           <div className="catalog__more">
